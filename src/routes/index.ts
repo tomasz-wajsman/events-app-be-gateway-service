@@ -5,7 +5,10 @@ import { Router } from 'express';
 const router = Router();
 
 router.get(Paths.Base, (_req, res) => {
-  res.status(HttpStatusCodes.OK).json({ message: 'Hello' });
+  res.status(HttpStatusCodes.OK).json({
+    message: 'Hello',
+    timestamp: Date.now(),
+  });
 });
 
 export default router;
