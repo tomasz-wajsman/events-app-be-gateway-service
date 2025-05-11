@@ -1,7 +1,6 @@
-import { Response } from 'supertest';
-import { IParseObjectError, parseJson } from 'jet-validators/utils';
 import { isString } from 'jet-validators';
-
+import { IParseObjectError, parseJson } from 'jet-validators/utils';
+import { Response } from 'supertest';
 
 /******************************************************************************
                                 Types
@@ -9,7 +8,7 @@ import { isString } from 'jet-validators';
 
 // Use generics to add properties to 'body'
 export type TRes<T = object> = Omit<Response, 'body'> & {
-  body: T & { error?: string | IErrObj },
+  body: T & { error?: string | IErrObj };
 };
 
 interface IErrObj {
@@ -21,7 +20,6 @@ interface IValidationErr {
   message: string;
   errors: IParseObjectError[];
 }
-
 
 /******************************************************************************
                                 Functions

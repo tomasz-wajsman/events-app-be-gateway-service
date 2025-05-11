@@ -1,16 +1,13 @@
-import { RouteError } from '@src/common/util/route-errors';
 import HttpStatusCodes from '@src/common/constants/HttpStatusCodes';
-
-import UserRepo from '@src/repos/UserRepo';
+import { RouteError } from '@src/common/util/route-errors';
 import { IUser } from '@src/models/User';
-
+import UserRepo from '@src/repos/UserRepo';
 
 /******************************************************************************
                                 Constants
 ******************************************************************************/
 
 export const USER_NOT_FOUND_ERR = 'User not found';
-
 
 /******************************************************************************
                                 Functions
@@ -36,10 +33,7 @@ function addOne(user: IUser): Promise<void> {
 async function updateOne(user: IUser): Promise<void> {
   const persists = await UserRepo.persists(user.id);
   if (!persists) {
-    throw new RouteError(
-      HttpStatusCodes.NOT_FOUND,
-      USER_NOT_FOUND_ERR,
-    );
+    throw new RouteError(HttpStatusCodes.NOT_FOUND, USER_NOT_FOUND_ERR);
   }
   // Return user
   return UserRepo.update(user);
@@ -51,15 +45,11 @@ async function updateOne(user: IUser): Promise<void> {
 async function _delete(id: number): Promise<void> {
   const persists = await UserRepo.persists(id);
   if (!persists) {
-    throw new RouteError(
-      HttpStatusCodes.NOT_FOUND,
-      USER_NOT_FOUND_ERR,
-    );
+    throw new RouteError(HttpStatusCodes.NOT_FOUND, USER_NOT_FOUND_ERR);
   }
   // Delete user
   return UserRepo.delete(id);
 }
-
 
 /******************************************************************************
                                 Export default

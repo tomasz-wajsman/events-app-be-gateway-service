@@ -11,7 +11,8 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "start": "NODE_ENV=production node -r ./config.js ./dist",
     "test": "NODE_ENV=test vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -50,6 +51,7 @@
     "eslint-plugin-n": "^17.18.0",
     "find": "^0.3.0",
     "fs-extra": "^11.3.0",
+    "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3",

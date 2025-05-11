@@ -1,7 +1,5 @@
-import { IParseObjectError } from 'jet-validators/utils';
-
 import HttpStatusCodes from '@src/common/constants/HttpStatusCodes';
-
+import { IParseObjectError } from 'jet-validators/utils';
 
 /******************************************************************************
                                  Classes
@@ -23,9 +21,7 @@ export class RouteError extends Error {
  * Handle "parseObj" errors.
  */
 export class ValidationError extends RouteError {
-
-  public static MESSAGE = 'The parseObj() function discovered one or ' + 
-    'more errors.';
+  public static MESSAGE = 'The parseObj() function discovered one or ' + 'more errors.';
 
   public constructor(errors: IParseObjectError[]) {
     const msg = JSON.stringify({
