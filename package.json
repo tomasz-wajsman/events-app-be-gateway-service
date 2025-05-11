@@ -7,9 +7,11 @@
     "dev": "NODE_ENV=development ts-node ./src",
     "dev:hot": "nodemon --exec \"npm run dev\" --watch ./src --ext .ts",
     "lint": "eslint .",
+    "prettier": "prettier --check \"**/*.{ts,tsx}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "start": "NODE_ENV=production node -r ./config.js ./dist",
     "test": "NODE_ENV=test vitest",
-    "type-check": "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -31,10 +33,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@stylistic/eslint-plugin-js": "^4.2.0",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
     "@swc/core": "^1.11.24",
     "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.1",
     "@types/find": "^0.2.4",
     "@types/fs-extra": "^11.0.4",
     "@types/jsonfile": "^6.1.4",
@@ -48,6 +52,7 @@
     "fs-extra": "^11.3.0",
     "jiti": "^2.4.2",
     "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
     "supertest": "^7.1.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",

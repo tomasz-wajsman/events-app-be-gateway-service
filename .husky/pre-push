@@ -1,0 +1,1 @@
+echo "Pre-push check" && yarn eslint && yarn prettier && yarn test && yarn build && echo "Checked!"
